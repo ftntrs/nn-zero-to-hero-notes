@@ -137,9 +137,23 @@ for nb in "${NOTEBOOKS[@]}"; do
   out_base="$(printf "%04d_%s" "$index" "$safe_name")"
 
   echo "[$index/$total] Converting: $nb_path"
-  if ! jupyter nbconvert --to webpdf --allow-chromium-download "$nb_path" --output "$out_base" --output-dir "$TMP_DIR"; then
+  nb_dir="$(dirname "$nb_path")"
+  nb_file="$(basename "$nb_path")"
+  if ! (
+    cd "$nb_dir"
+    jupyter nbconvert \
+      --to webpdf \
+      --allow-chromium-download \
+      --HTMLExporter.embed_images=True \
+      "$nb_file" \
+      --output "$out_base" \
+      --output-dir "$TMP_DIR"
+  ); then
     echo "webpdf conversion failed for '$nb_path'; trying classic PDF exporter."
-    jupyter nbconvert --to pdf "$nb_path" --output "$out_base" --output-dir "$TMP_DIR"
+    (
+      cd "$nb_dir"
+      jupyter nbconvert --to pdf "$nb_file" --output "$out_base" --output-dir "$TMP_DIR"
+    )
   fi
 
   pdf_path="$TMP_DIR/$out_base.pdf"
