@@ -1,23 +1,23 @@
+./N001 - Building Micrograd/N001 - Micrograd.ipynb
 ./N001 - Building Micrograd/N001 - Micrograd_Exercises.ipynb
 ./N001 - Building Micrograd/N001 - Micrograd_Solved_Exercises.ipynb
-./N001 - Building Micrograd/N001 - Micrograd.ipynb
+./N002 - Makemore 1/N002 - Makemore.ipynb
 ./N002 - Makemore 1/N002 - Makemore_Exercises.ipynb
 ./N002 - Makemore 1/N002 - Makemore_Solved_Exercises.ipynb
-./N002 - Makemore 1/N002 - Makemore.ipynb
+./N003 - Makemore 2 - MLP/N003 - Makemore_2.ipynb
 ./N003 - Makemore 2 - MLP/N003 - Makemore_2_Exercises.ipynb
 ./N003 - Makemore 2 - MLP/N003 - Makemore_2_Solved_Exercises.ipynb
-./N003 - Makemore 2 - MLP/N003 - Makemore_2.ipynb
+./N004 - Makemore 3 - Activations, BatchNorm/N004 - Makemore_3.ipynb
 ./N004 - Makemore 3 - Activations, BatchNorm/N004 - Makemore_3_Exercises.ipynb
 ./N004 - Makemore 3 - Activations, BatchNorm/N004 - Makemore_3_Solved_Exercises.ipynb
-./N004 - Makemore 3 - Activations, BatchNorm/N004 - Makemore_3.ipynb
+./N005 - Makemore 4 - Backprop Ninja/N005 - Makemore_4.ipynb
 ./N005 - Makemore 4 - Backprop Ninja/N005 - Makemore_4_Exercises.ipynb
 ./N005 - Makemore 4 - Backprop Ninja/N005 - Makemore_4_Solved_Exercises.ipynb
-./N005 - Makemore 4 - Backprop Ninja/N005 - Makemore_4.ipynb
 ./N006 - Makemore 5 - WaveNet/N006 - Makemore_5.ipynb
+./N007 - GPT From Scratch/N007 - GPT.ipynb
 ./N007 - GPT From Scratch/N007 - GPT_Exercises.ipynb
 ./N007 - GPT From Scratch/N007 - GPT_Solved_Exercises.ipynb
-./N007 - GPT From Scratch/N007 - GPT.ipynb
+./N008 - GPT Tokenizer/N008 - Tokenization.ipynb
 ./N008 - GPT Tokenizer/N008 - Tokenization_Exercises.ipynb
 ./N008 - GPT Tokenizer/N008 - Tokenization_Solved_Exercises.ipynb
-./N008 - GPT Tokenizer/N008 - Tokenization.ipynb
 ./N009 - Reproducing GPT-2/N009 - Reproducing_GPT-2.ipynb
