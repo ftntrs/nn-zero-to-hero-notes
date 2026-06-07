@@ -12,6 +12,9 @@ Example:
   ./pdf-create.sh                         # builds one PDF for each notebooks-*.txt
   ./pdf-create.sh notebooks-exercises.txt
   ./pdf-create.sh notebooks-full.txt all-notebooks-with-solved.pdf .
+
+Environment:
+  PDF_DISABLE_COPY=0                      # keep copy/extract permissions enabled
 EOF
 }
 
@@ -226,7 +229,10 @@ if "$PYTHON_BIN" -c "import pypdf" >/dev/null 2>&1; then
   # Merge via pypdf to preserve per-page content and overlays.
   "$PYTHON_BIN" - "$OUTPUT_PDF" "${LIST_FILE%.*}" "$MANIFEST" <<'PY'
 import io
+import os
+import secrets
 import sys
+from pypdf.constants import UserAccessPermissions
 from pypdf import PdfReader, PdfWriter
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
@@ -337,6 +343,16 @@ for index, page in enumerate(writer.pages, start=1):
 
 for entry, start in zip(entries, starts):
     writer.add_outline_item(entry["label"], start - 1)
+
+if os.environ.get("PDF_DISABLE_COPY", "1") != "0":
+    writer.encrypt(
+        user_password="",
+        owner_password=secrets.token_urlsafe(32),
+        permissions_flag=(
+            UserAccessPermissions.PRINT
+            | UserAccessPermissions.PRINT_TO_REPRESENTATION
+        ),
+    )
 
 with open(output, "wb") as f:
     writer.write(f)
